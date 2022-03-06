@@ -36,4 +36,4 @@ jobs:
 #        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 #        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         
-    - run: docker build . --file SG-Clicker/Dockerfile
+    - run: docker build . --file Dockerfile
