@@ -13,15 +13,13 @@ on:
         type: string
         default: DEV
         required: true
-
-# CONFIGURATION
-env:
-  NUGET_VERSION: '5.3.1'           # set this to the dot net version to use
+      sonar:
+        type: string
   
 jobs:
   build:
 
-    runs-on: [ NS-DEV ]
+    runs-on: [ nsl-dev ]
 
     steps:
     - uses: actions/checkout@v2
@@ -30,7 +28,7 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
           dotnet-version: '6.0.x' # SDK Version to use; x will use the latest version of the 3.1 channel
-    - run: dotnet build SG-Clicker/SG-Clicker.sln
+    - run: dotnet build SG-Clicker.sln
    
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
