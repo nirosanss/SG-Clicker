@@ -43,4 +43,3 @@ jobs:
       with: 
         name: web-app-image
         path: /app/publish
-/app/publish
