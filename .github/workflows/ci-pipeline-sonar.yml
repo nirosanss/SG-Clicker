@@ -37,3 +37,10 @@ jobs:
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         
     - run: docker build . --file Dockerfile
+
+    - name: Upload Artifact to GitHub Package
+      uses: actions/upload-artifact@v2
+      with: 
+        name: web-app-image
+        path: /app/publish
+/app/publish
